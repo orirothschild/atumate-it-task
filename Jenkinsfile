@@ -31,7 +31,7 @@
                 -Dsonar.sources=. \
                 -Dsonar.css.node=. \
                 -Dsonar.host.url=ec2-100-25-168-107.compute-1.amazonaws.com:9000 \
-                -Dsonar.login=dce2d33ab9333cc94a7aca36ec3f13e9cc95a5ad
+                -Dsonar.login=dce2d33ab9333cc94a7aca36ec3f13e9cc95a5ad"
                 }
             }
         }
