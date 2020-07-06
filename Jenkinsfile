@@ -29,7 +29,9 @@
             
             post {
                 always {
-                    junit '**/target/surefire-reports/*.xml'
+                    sh '''mvn sonar:sonar \
+                     -Dsonar.host.url=http://ec2-100-25-168-107.compute-1.amazonaws.com:9000 \
+                     -Dsonar.login=ori'''
                 }
             }
         }
