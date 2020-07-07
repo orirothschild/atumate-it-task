@@ -21,9 +21,7 @@
               
               sh '''
                 mvn -B -DskipTests clean package
-    
-                docker run --rm -v "$(pwd)":/opt/maven -w /opt/maven maven:3.3.9-jdk-8 mvn clean install
-              '''
+                  '''
       }
     }
 
