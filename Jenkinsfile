@@ -41,7 +41,7 @@
             nexusUrl: 'ada3296ebd44a49bf9ca6d98a0fe4cfa-1364365130.us-east-1.elb.amazonaws.com:8081',
             nexusVersion: 'nexus3',
             protocol: 'http',
-            repository: 'http://ada3296ebd44a49bf9ca6d98a0fe4cfa-1364365130.us-east-1.elb.amazonaws.com:8081/repository/automate-it-task/',
+            repository: 'http://ada3296ebd44a49bf9ca6d98a0fe4cfa-1364365130.us-east-1.elb.amazonaws.com:8081/repository/automate-it-task',
             version: '0.3.1'
 
       }
