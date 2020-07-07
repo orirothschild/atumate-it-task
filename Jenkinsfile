@@ -7,7 +7,6 @@
         NEXUS_PASS = credentials('nexus-pass')  //dockerhub id
         NEXUS_ID = credentials('nexus-id') //dockerhub pass
         SONAR_TOKEN = credentials('sonar-token') //dockerhub pass
-        APP_NAME = 'automate-it-test'
     }
 
     stages {
@@ -42,6 +41,12 @@
          steps{
          sh './pipeline/build_dockerfile.sh'
          }
+    }
+
+    stage('Build dockerfile'){
+        steps{
+        sh './pipeline/upload_image_nexus.sh'
+        }
     }
 
          
