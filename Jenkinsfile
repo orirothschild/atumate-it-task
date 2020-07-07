@@ -42,7 +42,7 @@
 
     stage('Build dockerfile'){
           steps{ 
-              sh 'ls'
+              sh 'docker build -f "(pwd)"/deploy-war-dockerfile . --tag automate-it-task'
              }
     }
     
