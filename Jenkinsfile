@@ -1,10 +1,5 @@
  pipeline {
-    agent {
-        docker {
-            image 'maven:3-alpine'
-            args '-v /root/.m2:/root/.m2'
-        }
-    }
+    agent any
 
     environment{
         DOCKERHUB_PASS = credentials('dockerhub-pass')  //dockerhub id
