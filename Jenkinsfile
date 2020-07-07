@@ -19,18 +19,6 @@
                   '''
       }
     }
-
-
-     stage('Build dockerfile'){
-          steps{
-              
-              sh 'docker run --rm -v "$(pwd)":/opt/maven -w /opt/maven maven:3.3.9-jdk-8 mvn clean install'
-             }
-    }
-   
-    
-
-
     stage('Upload War To Nexus'){
         steps{
             nexusArtifactUploader artifacts: [
@@ -50,6 +38,12 @@
             version: '0.3.1'
 
       }
+      
+    stage('Build dockerfile'){
+          steps{ 
+              sh 'docker build -f dockerfile . --tag automate-it-task'
+             }
+    }
     
          
     // stage('Code Quality Check via SonarQube') {
