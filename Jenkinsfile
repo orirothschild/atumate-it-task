@@ -24,6 +24,28 @@
               '''
       }
     }
+
+    stages {
+      stage('Upload War To Nexus'){
+          steps{
+              nexusArtifactUploader artifacts: [
+                  [
+                      artifactId: 'time-tracker-parent', 
+                      classifier: '',
+                      file: '/var/jenkins_home/workspace/automate-it-task_master/web/target/time-tracker-web-0.3.1.war',
+                      type: 'war'
+                ]
+            ], 
+                credentialsId: 'nexus-access',
+                groupId: 'clinic.programming.time-tracker',
+                nexusUrl: 'ada3296ebd44a49bf9ca6d98a0fe4cfa-1364365130.us-east-1.elb.amazonaws.com:8081',
+                nexusVersion: 'nexus3',
+                protocol: 'http',
+                repository: 'http://ada3296ebd44a49bf9ca6d98a0fe4cfa-1364365130.us-east-1.elb.amazonaws.com:8081/repository/automate-it-task/',
+                version: '0.3.1'
+
+      }
+    }
          
     // stage('Code Quality Check via SonarQube') {
     //     steps {
