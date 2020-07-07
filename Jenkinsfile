@@ -11,11 +11,10 @@
     }
 
     stages {
-      stage('Build'){
-          steps{
-              sh './pipeline/build.sh'
-      }
+      stage('Build'){      
+         sh './pipeline/build.sh'
     }
+    
     stage('Upload War To Nexus'){
         steps{
             nexusArtifactUploader artifacts: [
