@@ -11,33 +11,37 @@
     }
 
     stages {
-      stage('Build'){      
-         sh './pipeline/build.sh'
-    }
-    
-    stage('Upload War To Nexus'){
-        steps{
-            nexusArtifactUploader artifacts: [
-                [
-                    artifactId: 'time-tracker-parent', 
-                    classifier: '',
-                    file: '/var/jenkins_home/workspace/automate-it-task_master/web/target/time-tracker-web-0.3.1.war',
-                    type: 'war'
-            ]
-        ], 
-            credentialsId: 'nexus-access',
-            groupId: 'clinic.programming.time-tracker',
-            nexusUrl: 'ada3296ebd44a49bf9ca6d98a0fe4cfa-1364365130.us-east-1.elb.amazonaws.com:8081',
-            nexusVersion: 'nexus3',
-            protocol: 'http',
-            repository: 'automate-it-task',
-            version: '0.3.1'
+        stage('Build'){
+            steps{
+                sh './pipeline/build.sh'
+            }
+        }
 
-      }
-    }
+        stage('Upload War To Nexus'){
+            steps{
+                nexusArtifactUploader artifacts: [
+                    [
+                        artifactId: 'time-tracker-parent', 
+                        classifier: '',
+                        file: '/var/jenkins_home/workspace/automate-it-task_master/web/target/time-tracker-web-0.3.1.war',
+                        type: 'war'
+                ]
+            ], 
+                credentialsId: 'nexus-access',
+                groupId: 'clinic.programming.time-tracker',
+                nexusUrl: 'ada3296ebd44a49bf9ca6d98a0fe4cfa-1364365130.us-east-1.elb.amazonaws.com:8081',
+                nexusVersion: 'nexus3',
+                protocol: 'http',
+                repository: 'automate-it-task',
+                version: '0.3.1'
+
+            }
+        }
 
     stage('Build dockerfile'){
+         steps{
          sh './pipeline/build_dockerfile.sh'
+         }
     }
 
          
