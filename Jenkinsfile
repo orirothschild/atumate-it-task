@@ -25,20 +25,20 @@
       }
     }
          
-    stage('Code Quality Check via SonarQube') {
-        steps {
-            script {
-            def scannerHome = tool 'sonarqube';
-                withSonarQubeEnv("sonarqube-container") {
-                sh "mvn sonar:sonar \
-                    -Dsonar.projectKey=automate-it-test \
-                    -Dsonar.host.url=http://a7a0a70e133ad4e68aee277971bb1a9c-1175145241.us-east-1.elb.amazonaws.com:9000 \
-                    -Dsonar.login=9578a01e55d41ea1493a1384fe4cfd9a09a53bab
-                "
-                }
-            }
-        }
-     }
+    // stage('Code Quality Check via SonarQube') {
+    //     steps {
+    //         script {
+    //         def scannerHome = tool 'sonarqube';
+    //             withSonarQubeEnv("sonarqube-container") {
+    //             sh "mvn sonar:sonar \
+    //                 -Dsonar.projectKey=automate-it-test \
+    //                 -Dsonar.host.url=http://a7a0a70e133ad4e68aee277971bb1a9c-1175145241.us-east-1.elb.amazonaws.com:9000 \
+    //                 -Dsonar.login=9578a01e55d41ea1493a1384fe4cfd9a09a53bab
+    //             "
+    //             }
+    //         }
+    //     }
+    //  }
    }
 }
 
