@@ -38,7 +38,8 @@
             version: '0.3.1'
 
       }
-      
+    }
+
     stage('Build dockerfile'){
           steps{ 
               sh 'docker build -f dockerfile . --tag automate-it-task'
@@ -57,6 +58,6 @@
     //         }
     //     }
     //  }
-     }
+     
     }
  }
