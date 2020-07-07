@@ -43,7 +43,7 @@
          }
     }
 
-    stage('Build dockerfile'){
+    stage('upload dockerfile to nexus'){
         steps{
         sh './pipeline/upload_image_nexus.sh'
         }
