@@ -9,6 +9,14 @@ apply all jenkins yaml files
 
 apply sonarqube yaml files or use helm chart with override to service port 
 helm install sonarqube oteemocharts/sonarqube --set ingress.hosts[0].servicePort=9000,
-update service to loadbalancer
+update service to from helm to loadbalancer
+
+
+-----------------------
+
+
+create sonarqube token from sonarqube app
+
+
 
 
