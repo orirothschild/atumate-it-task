@@ -32,7 +32,7 @@
                 [
                     artifactId: 'time-tracker-parent', 
                     classifier: '',
-                    file: 'target/time-tracker-web-0.3.1.war',
+                    file: '/var/jenkins_home/workspace/automate-it-task_master@2/web/target/time-tracker-web-0.3.1.war',
                     type: 'war'
             ]
         ], 
