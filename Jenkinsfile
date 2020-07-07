@@ -13,10 +13,7 @@
     stages {
       stage('Build'){
           steps{
-              
-              sh '''
-                mvn -B -DskipTests clean package
-                  '''
+              sh './pipeline/build.sh'
       }
     }
     stage('Upload War To Nexus'){
@@ -41,11 +38,9 @@
     }
 
     stage('Build dockerfile'){
-          steps{ 
-              sh 'docker build -f deploy-war-dockerfile . --tag automate-it-task'
-             }
+         sh './pipeline/build_dockerfile.sh'
     }
-    
+
          
     // stage('Code Quality Check via SonarQube') {
     //     steps {
