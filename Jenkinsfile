@@ -1,5 +1,10 @@
  pipeline {
-    agent any
+    agent {
+        docker {
+            image 'maven:3-alpine'
+            args '-v /root/.m2:/root/.m2'
+        }
+    }
 
     environment{
         DOCKERHUB_PASS = credentials('dockerhub-pass')  //dockerhub id
@@ -15,17 +20,18 @@
           steps{
               
               sh '''
-                docker run --rm -v "$(pwd)":/opt/maven -w /opt/maven maven:3.3.9-jdk-8 mvn -B -DskipTests clean package
+                mvn -B -DskipTests clean package
                   '''
       }
     }
+    agent any
 
-    //  stage('Build docker artifact'){
-    //       steps{
+     stage('Build docker artifact'){
+          steps{
               
-    //           sh 'docker run --rm -v "$(pwd)":/opt/maven -w /opt/maven maven:3.3.9-jdk-8 mvn clean install'
-    //          }
-    // }
+              sh 'docker run --rm -v "$(pwd)":/opt/maven -w /opt/maven maven:3.3.9-jdk-8 mvn clean install'
+             }
+    }
    
     
 
