@@ -6,7 +6,7 @@
         DOCKER_ID = credentials('dockerhub-id') //dockerhub pass
         NEXUS_PASS = credentials('nexus-pass')  //dockerhub id
         NEXUS_ID = credentials('nexus-id') //dockerhub pass
-        SONAR_TOKEN = credentials('sonar-token') //dockerhub pass
+        SONARQUBE_TOKEN = credentials('	sonarqube-token') //dockerhub pass
     }
 
     stages {
