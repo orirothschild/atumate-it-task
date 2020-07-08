@@ -11,5 +11,11 @@ spec:
     app: nexus-server
   type: LoadBalancer  
   ports:
-    - port: 8081
+    - name: http
+      protocol: TCP
+      port: 8081
       targetPort: 8081
+    - name: docker
+      protocol: TCP
+      port: 5000
+      targetPort: 5000
