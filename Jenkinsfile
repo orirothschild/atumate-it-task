@@ -40,7 +40,7 @@
                 nexusVersion: 'nexus3',
                 protocol: 'http',
                 repository: 'automate-it-war',
-                version: "$SHA"
+                version: "0.3.1"
 
             }
         }
