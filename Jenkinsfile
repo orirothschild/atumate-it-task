@@ -43,11 +43,11 @@
          }
     }
 
-    stage('upload dockerfile to nexus'){
-        steps{
-        sh './pipeline/upload_image_nexus.sh'
-        }
-    }
+    // stage('upload dockerfile to nexus'){
+    //     steps{
+    //     sh './pipeline/upload_image_nexus.sh'
+    //     }
+    // }
 
          
     stage('Code Quality Check via SonarQube') {
