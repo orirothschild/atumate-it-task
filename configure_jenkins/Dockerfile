@@ -1,0 +1,18 @@
+FROM jenkins/jenkins
+
+USER root
+
+# Update & Upgrade OS
+RUN apt-get update \
+ && apt-get -y upgrade
+
+# Add Maven
+RUN apt-get -y install maven --no-install-recommends
+
+# Add Docker
+RUN curl -sSL https://get.docker.com/ | sh
+
+# add aws cli
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+RUN unzip awscliv2.zip
+RUN ./aws/install
