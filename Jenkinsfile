@@ -2,11 +2,11 @@
     agent any
 
     environment{
-        DOCKERHUB_PASS = credentials('dockerhub-pass')  //dockerhub id
-        DOCKER_ID = credentials('dockerhub-id') //dockerhub pass
-        NEXUS_PASS = credentials('nexus-pass')  //dockerhub id
-        NEXUS_ID = credentials('nexus-id') //dockerhub pass
-        SONARQUBE_TOKEN = credentials('sonarqube-token') //dockerhub pass
+        DOCKERHUB_PASS = credentials('dockerhub-pass') 
+        DOCKERHUB_ID = credentials('dockerhub-id') 
+        NEXUS_PASS = credentials('nexus-pass')  
+        NEXUS_ID = credentials('nexus-id') 
+        SONARQUBE_TOKEN = credentials('sonarqube-token') 
     }
 
     stages {
