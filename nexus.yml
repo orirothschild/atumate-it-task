@@ -12,6 +12,9 @@ spec:
       labels:
         app: nexus-server
     spec:
+      #i will add this to be able to create repositories inside the voulume claim
+      securityContext:
+        fsGroup: 2000 
       containers:
         - name: nexus
           image: sonatype/nexus3:latest
@@ -26,8 +29,10 @@ spec:
           - containerPort: 8081
           - containerPort: 5000
           volumeMounts:
-            - name: nexus-data
+            - name: nexus-persistent-storage
               mountPath: /nexus-data
       volumes:
-        - name: nexus-data
-          emptyDir: {}
+        - name: nexus-persistent-storage
+              # pointer to the configuration of HOW we want the mount to be implemented
+          persistentVolumeClaim:
+            claimName: nexus-pvc

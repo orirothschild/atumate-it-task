@@ -36,10 +36,10 @@
             ], 
                 credentialsId: 'nexus-access',
                 groupId: 'clinic.programming.time-tracker',
-                nexusUrl: 'ada3296ebd44a49bf9ca6d98a0fe4cfa-1364365130.us-east-1.elb.amazonaws.com:8081',
+                nexusUrl: 'ac097da9864f24ab489ce07e285b1829-437793441.us-east-1.elb.amazonaws.com:8081',
                 nexusVersion: 'nexus3',
                 protocol: 'http',
-                repository: 'automate-it-task-war',
+                repository: 'automate-it-war',
                 version: '0.3.1'
 
             }

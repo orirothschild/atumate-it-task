@@ -22,7 +22,5 @@ spec:
             mountPath: /var/jenkins_home
       volumes:
         - name: jenkins-persistent-storage
-              # pointer to the configuration of HOW we want the mount to be implemented
-              # i will have what he is having kind
           persistentVolumeClaim:
             claimName: jenkins-pvc
