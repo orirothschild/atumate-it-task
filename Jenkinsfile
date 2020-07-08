@@ -2,6 +2,8 @@
     agent any
 
     environment{
+        SONARQUBE_URL = credentials('sonarqube-url')
+        NEXUS_URL = credentials('nexus-url')
         NEXUS_PASS = credentials('nexus-pass')  
         NEXUS_ID = credentials('nexus-id') 
         SONARQUBE_TOKEN = credentials('sonarqube-token') 
@@ -34,11 +36,11 @@
             ], 
                 credentialsId: 'nexus-access',
                 groupId: 'clinic.programming.time-tracker',
-                nexusUrl: 'ac097da9864f24ab489ce07e285b1829-437793441.us-east-1.elb.amazonaws.com:8081',
+                nexusUrl: "$NEXUS_URL",
                 nexusVersion: 'nexus3',
                 protocol: 'http',
                 repository: 'automate-it-war',
-                version: '0.3.1'
+                version: "$SHA"
 
             }
         }
