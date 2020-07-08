@@ -4,4 +4,4 @@ echo "*****************************"
 echo "****building docker image****"
 echo "*****************************"
 
-docker build -f deploy-war-dockerfile . --tag automate-it-task
+docker build -f deploy-war-dockerfile . --tag orirothschild/automate-it-task

@@ -15,7 +15,7 @@ spec:
       protocol: TCP
       port: 8081
       targetPort: 8081
-    - name: http2
+    - name: docker
       protocol: TCP
       port: 5000
       targetPort: 5000

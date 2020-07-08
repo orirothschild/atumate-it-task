@@ -2,8 +2,6 @@
     agent any
 
     environment{
-        DOCKERHUB_PASS = credentials('dockerhub-pass') 
-        DOCKERHUB_ID = credentials('dockerhub-id') 
         NEXUS_PASS = credentials('nexus-pass')  
         NEXUS_ID = credentials('nexus-id') 
         SONARQUBE_TOKEN = credentials('sonarqube-token') 
@@ -51,11 +49,11 @@
          }
     }
 
-    // stage('upload dockerfile to nexus'){
-    //     steps{
-    //     sh './pipeline/upload_image_nexus.sh'
-    //     }
-    // }
+     stage('upload dockerfile to nexus'){
+         steps{
+         sh './pipeline/upload_image_nexus.sh'
+         }
+     }
      
     }
  }
