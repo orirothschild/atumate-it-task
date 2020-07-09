@@ -16,6 +16,8 @@ this project was tested in production environment using kops on aws
 for jenkins i will be using a container i created myself and not the offical image. since my image contains aws_cli docker and maven
 i attached the folder used to create jenkins called "configure_jenkins" and ran it with docker compose
 
+as for the pipeline i attached the pipeline folder containings the bash scripts i refer to within the jenkinsfile as the "pipeline" folder
+
 ### notice 
 
 as for nexus docker repository, i have encountered an issue with opening its docker port, i solved it by using this helm chart:
